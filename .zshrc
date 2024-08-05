@@ -140,8 +140,8 @@ alias ll='ls -alF --color=always'
 alias la='ls -A'
 alias l='ls -CF'
 alias bat='batcat'
-alias python='python3.11'
-alias pip='python3.11 -m pip'
+alias python='python3'
+alias pip='python3 -m pip'
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
