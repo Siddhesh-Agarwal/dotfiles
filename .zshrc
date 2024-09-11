@@ -74,7 +74,7 @@ zstyle ':omz:update' mode auto      # update automatically without asking
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-ENABLE_CORRECTION="true"
+ENABLE_CORRECTION="false"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # You can also set it to another string to have that shown instead of the default red dots.
@@ -133,15 +133,20 @@ fi
 # For a full list of active aliases, run `alias`.
 
 # aliases
-alias zshconfig="mate ~/.zshrc"
-alias ohmyzsh="mate ~/.oh-my-zsh"
-alias ls='ls --color=always -1'
-alias ll='ls -alF --color=always'
-alias la='ls -A'
-alias l='ls -CF'
+alias zshconfig="$EDITOR ~/.zshrc"
+alias ohmyzsh="$EDITOR ~/.oh-my-zsh"
+alias ls='eza --all --sort type --color=always --icons=always --long --git --no-permissions --no-user --no-filesize'
+alias ll='eza --all --sort type --color=always --icons=always --long --git --no-user'
+alias la='eza --all --sort type --color=always --icons=always --long --git --no-permissions --no-user'
 alias bat='batcat'
-alias python='python3'
-alias pip='python3 -m pip'
+alias python='python3.11'
+alias pip='python3.11 -m pip'
+
+# fuck setup
+eval $(thefuck --alias)
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# fzf keybindings setup
+# eval "$(fzf --zsh)"
